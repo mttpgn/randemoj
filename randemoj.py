@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+import random
+
+rand = random.SystemRandom()
 
 def random_emoji():
-    # ranges were chosen based on where most emojis are
     ranges = [
         (0x1F600, 0x1F64F),  # Emoticons
         (0x1F300, 0x1F5FF),  # Misc Symbols and Pictographs
@@ -16,7 +18,7 @@ def random_emoji():
         (0x20D0, 0x20FF),    # Combining Diacritical Marks for Symbols
         (0x1F000, 0x1F02B),  # Mahjong tiles
     ]
-    
+
     while True:
         range_ = rand.choice(ranges)
         emoji_code = rand.randint(range_[0], range_[1])
